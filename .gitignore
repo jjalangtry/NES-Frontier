@@ -1,4 +1,5 @@
 node_modules/
+.dev/
 .venv/
 __pycache__/
 src/asm/*.nes
