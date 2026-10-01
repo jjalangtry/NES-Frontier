@@ -34,5 +34,5 @@ variables, constants, reset, game states, sprite routines, and data banks.
 `sprites.inc`, `sprites.chr`, and `starfield.bin` are cartridge data.
 
 To edit tiles, install `requirements.txt` in a Python environment and run
-`tools/generate-sprites.py`. The bundled NESASM binary is for ARM64 macOS;
+`.dev/generate-sprites.py`. The bundled NESASM binary is for ARM64 macOS;
 set `NESASM` to a compatible compiler on another platform.

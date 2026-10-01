@@ -4,8 +4,8 @@
   "private": true,
   "description": "NES Frontier: a 6502 assembly space game",
   "scripts": {
-    "build": "node tools/build.js",
-    "test": "node tools/verify.js",
+    "build": "node .dev/build.js",
+    "test": "node .dev/verify.js",
     "start": "python3 -m http.server 8080 --directory public"
   },
   "dependencies": {"jsnes": "1.2.1"},
