@@ -1,0 +1,9 @@
+node_modules/
+.venv/
+__pycache__/
+src/asm/*.nes
+src/asm/*.fns
+src/asm/*.lst
+public/frontier.nes
+public/js/jsnes.min.js
+.DS_Store

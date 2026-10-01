@@ -1,0 +1,15 @@
+{
+	admin off
+	persist_config off
+	auto_https off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+	header Cache-Control "no-cache"
+	header X-Content-Type-Options "nosniff"
+	@rom path /frontier.nes
+	header @rom Content-Type application/octet-stream
+	file_server
+}

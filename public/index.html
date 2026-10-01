@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>NES Frontier</title>
+  <style>
+    * { box-sizing:border-box }
+    body { margin:0;min-height:100dvh;background:#000;display:grid;place-items:center;overflow:hidden }
+    main { position:relative;width:min(100vw,calc(100dvh * 256 / 240));aspect-ratio:256/240 }
+    canvas { width:100%;height:100%;display:block;image-rendering:pixelated;outline:none }
+    #play { position:absolute;inset:0;margin:auto;width:64px;height:64px;border:1px solid #ffffff66;border-radius:50%;background:#000b;color:white;font-size:25px;cursor:pointer }
+    #play[hidden] { display:none }
+    #touch { display:none }
+    #error { position:absolute;inset:45% 0 auto;text-align:center;color:#fff;font:14px monospace }
+    @media(pointer:coarse) {
+      body { padding-bottom:64px }
+      main { width:min(100vw,calc((100dvh - 64px) * 256 / 240)) }
+      #touch { position:fixed;bottom:8px;left:50%;transform:translateX(-50%);width:min(100%,640px);padding:0 12px;display:flex;justify-content:space-between;gap:12px;touch-action:none;user-select:none }
+      #touch div { display:flex;gap:8px }
+      #touch button { width:clamp(34px,10vw,44px);height:44px;background:#151515;color:#aaa;border:1px solid #444;border-radius:4px;font:18px monospace;touch-action:none }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <canvas id="screen" width="256" height="240" tabindex="0" aria-label="NES Frontier"></canvas>
+    <button id="play" aria-label="Start emulator" disabled>▶</button>
+    <p id="error" hidden></p>
+  </main>
+  <div id="touch">
+    <div><button data-key="ArrowUp" aria-label="Up">↑</button><button data-key="ArrowDown" aria-label="Down">↓</button></div>
+    <div><button data-key="KeyP" aria-label="Pause menu">Ⅱ</button><button data-key="KeyC" aria-label="Shield">◇</button><button data-key="KeyZ" aria-label="Phaser or confirm">A</button><button data-key="KeyX" aria-label="Torpedo">B</button></div>
+  </div>
+  <script src="js/jsnes.min.js"></script>
+  <script src="js/player.js?v=9"></script>
+</body>
+</html>
