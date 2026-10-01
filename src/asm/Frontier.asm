@@ -1,6 +1,8 @@
 ; NES Frontier
 ; A side scrolling space game written in 6502 assembly.
-; NESASM header, reset, and game states use the layout of Jakob's Pong.
+; NESASM header, reset, and game states
+;
+; Author: Jakob Langtry
 
   .inesprg 1   ; 1x 16KB PRG code
   .ineschr 1   ; 1x  8KB CHR data
